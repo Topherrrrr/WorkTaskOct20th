@@ -34,12 +34,20 @@
       }
       console.log("RetVal: "+retVal);
       output.value=retVal;
+      document.getElementById('allOutput').innerHTML=retVal;
       
+      }
+
+      function copy(){
+        navigator.clipboard.writeText(document.getElementById("output").value);
+        document.getElementById("allOutput").innerHTML="Output copied to clipboard";
       }
     </script>
     <button type="button" onclick="f1()" text="extract">Extract values</button>
     <input type="text" id="fname" name="fname" value="Paste logs here" onclick="f1()">
+    <br>
+    <button type="button" onclick="copy()" text="copy to clipboard">Copy to clipboard</button>
     <input type="text" id="output" name="output" value="Output  appears here">
-    
+    <div id="allOutput"></div>
   </body>
 </html>
