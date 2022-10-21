@@ -21,12 +21,13 @@
     <script src="https://unpkg.com/react-router-dom@5.2.1/umd/react-router-dom.min.js" crossorigin></script>
 
     <!-- load our react component. -->
-    <h1>HelloWorld</h1>
+    <h1>Text Extractor</h1>
     <script>
       function f1(){
       var inputs=document.getElementById("fname").value;
       console.log("Values: "+inputs);
       var arr=inputs.split(' ');
+      arr=arr.slice(7);
       console.log(arr);
       var retVal='';
       for(let i =7; i<arr.length; i+=12){
@@ -44,10 +45,10 @@
       }
     </script>
     <button type="button" onclick="f1()" text="extract">Extract values</button>
-    <input type="text" id="fname" name="fname" value="Paste logs here" onclick="f1()">
+    <input type="text" id="fname" name="fname" onclick="f1()">
     <br>
     <button type="button" onclick="copy()" text="copy to clipboard">Copy to clipboard</button>
-    <input type="text" id="output" name="output" value="Output  appears here">
+    <input type="text" id="output" name="output" >
     <div id="allOutput"></div>
   </body>
 </html>
